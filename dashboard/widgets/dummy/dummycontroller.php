@@ -24,7 +24,7 @@ class DummyController extends WidgetController implements IWidgetController {
         $this->icon     =  Util::imagePath('dashboard', 'icons/9.png');
         $this->refresh  =                                           30;
         $this->wId      =                                      'dummy';
-        $this->name     =        $this->L10N->t('Dummy')->__toString();
+        $this->name     =                      $this->L10N->t('Dummy');
     }
 
     /**

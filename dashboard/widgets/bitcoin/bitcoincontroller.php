@@ -24,7 +24,7 @@ class BitcoinController extends WidgetController implements IWidgetController {
         $this->icon     =Util::imagePath('dashboard', 'icons/201.png');
         $this->refresh  =                                          360;
         $this->wId      =                                    'bitcoin';
-        $this->name     =      $this->L10N->t('Bitcoin')->__toString();
+        $this->name     =                    $this->L10N->t('Bitcoin');
     }
 
     /**

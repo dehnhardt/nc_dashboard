@@ -22,7 +22,7 @@ class IframeController extends WidgetController implements IWidgetController {
         $this->icon     = Util::imagePath('dashboard', 'icons/71.png');
         $this->refresh  =                                            0;
         $this->wId      =                                     'iframe';
-        $this->name     =       $this->L10N->t('iFrame')->__toString();
+        $this->name     =                     $this->L10N->t('iFrame');
     }
 
     /**
@@ -39,7 +39,8 @@ class IframeController extends WidgetController implements IWidgetController {
     }
 
     public function getName() {
-        return $this->L10N->t( $this->getConfig('title', 'iFrame') )->__toString();
+        //return $this->L10N->t( $this->getConfig('title', 'iFrame') )->__toString();
+	return '';
     }
 
     // ajax call methods ---------------------------------------------

@@ -22,7 +22,7 @@ class ClockController extends WidgetController implements IWidgetController {
         $this->icon     =  Util::imagePath('dashboard', 'icons/5.png');
         $this->refresh  =                                            0;
         $this->wId      =                                      'clock';
-        $this->name     =        $this->L10N->t('Clock')->__toString();
+        $this->name     =                      $this->L10N->t('Clock');
     }
 
     /**
