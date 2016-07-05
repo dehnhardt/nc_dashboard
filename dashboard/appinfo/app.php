@@ -33,7 +33,7 @@ App::addNavigationEntry(array(
 
     // the title of your application. This will be used in the
     // navigation or on the settings page of your app
-    'name' => OC_L10N::get('dashboard')->t('Dashboard')
+    'name' => \OC::$server->getL10N('dashboard')->t('Dashboard') 
 ));
 
 
