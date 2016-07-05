@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+lang_map = ja_JP: ja
+
+[owncloud.ocdashboard]
+file_filter = <lang>/ocdashboard.po
+source_file = templates/ocdashboard.pot
+source_lang = en
+type = PO

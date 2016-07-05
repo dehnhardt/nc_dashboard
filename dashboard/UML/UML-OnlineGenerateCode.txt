@@ -1,0 +1,60 @@
+Link: http://yuml.me/diagram/plain/class/draw
+Code:
+
+// Cool Class Diagram
+
+// Entities
+// *********
+
+// Package: Controller
+[RouteWidgetContentController||+getComplete($wIId);+getContent($wIId);+callMethod($wIId $key $value){bg:steelblue}]
+[RoutePageController|+index(){bg:steelblue}]
+[RouteWidgetManagementController||+getEnabled();+addNewInstance($wId);+removeInstance($wIId);+enable($wId);+disable($wId);+getAvailable(){bg:steelblue}]
+[RouteWidgetSettingsController||+setConfig($wIId $key $value);+getConfig($wIId $key $default){bg:steelblue}]
+
+// Package: widgets
+[WidgetController|+getBasicValues;+getStatus;#setStatus($status);#messages;#errors;#problems{bg:lightsalmon}]
+[WidgetTemplate||+getHtml();#p($string): string;#print_unescaped($string): string{bg:lightsalmon}]
+
+// Package: widgets/dummy
+[DummyController||+getData();+someMethod($value){bg:darksalmon}]
+[DummyTemplate||+getContentHtml( $data );+getSettingsArray();getLicenseInfo(){bg:darksalmon}]
+
+// Package: DB
+[WidgetConfigDAO||+insertOrUpdateConfig();+getConfig();+getHighestNo();+findEnabledWidgets();+removeWidgetConfigs(){bg:green}]
+[WidgetHashDAO||+insertHash( $wIId $user $usedHash );+updateTime( $wIId $user $usedHash );+removeOldHashes();+removeWidgetHashes( $wIId $user ){bg:green}]
+[WidgetsDAO||+getAVailableWidgets( $user );+insertIfNotExists( $wId ... );+getAppName( $wId );+getControllerServiceName( $wId );+getTemplateServiceName( $wId );+getCssPaths( $wId );+getJsPaths( $wId ){bg:green}]
+
+// Package: Services
+[WidgetContentService||+getComplete($wIId);+getContent($wIId);+callMethod($wIId $key $value){bg:yellow}]
+[WidgetManagementService||+getAvailable();+getEnabled();+enable();+disable();+addNewInstance($wId);+removeInstance($wIId);+getInstance($wIId);+addWidget();{bg:yellow}]
+[WidgetSettingsService||+setConfig($wIId $key $value);+getConfig($wIId $key);+getEnabledWidgets();+getNextWidgetInstanceNumber($wId);+removeWidgetInstance( $wIId ){bg:yellow}]
+[WidgetHashService||+removeOldHashes();+isNew( $wIId $data );+removeHashes( $wIId ){bg:yellow}]
+[WidgetSettingsService||+getConfig( $wIId $key );+setConfig( $wIId $key $value ){bg:yellow}]
+[WidgetCssAndJsService||+loadAll();+loadWidgetCss( $wId );+loadWidgetJs( $wId ){bg:yellow}]
+
+// Relations
+// ==========
+[DummyController]-^[WidgetController]
+[DummyTemplate]-^[WidgetTemplate]
+[RouteWidgetContentController]-[WidgetContentService]
+[RouteWidgetManagementController]-[WidgetManagementService]
+[WidgetController]-[WidgetSettingsService]
+[WidgetTemplate]-[WidgetSettingsService]
+[WidgetManagementService]-[WidgetSettingsService]
+[WidgetSettingsService]-[WidgetConfigDAO]
+[WidgetContentService]-[WidgetHashService]
+[WidgetHashService]-[WidgetHashDAO]
+[WidgetContentService]-*[DummyTemplate]
+[WidgetContentService]-*[DummyController]
+[RouteWidgetSettingsController]-[WidgetSettingsService]
+[RoutePageController]-[WidgetManagementService]
+[WidgetContentService]-[WidgetManagementService]
+[WidgetManagementService]-[WidgetsDAO]
+[WidgetCssAndJsService]-[WidgetManagementService]
+[WidgetCssAndJsService]-[WidgetsDAO]
+[RoutePageController]-[WidgetCssAndJsService]
+
+// implementions
+[DummyController]-.-^[\<\<IWidgetController\>\>|+getBasicConfig();+getData(){bg:orangered}]
+[DummyTemplate]-.-^[\<\<IWidgetTemplate\>\>|+getContentHtml();+getSettingsArray();+getHtml(){bg:orangered}]

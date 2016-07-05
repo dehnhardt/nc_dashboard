@@ -1,0 +1,22 @@
+#widgets .widget.tasks .calendar {
+    margin-top:             10px;
+    margin-bottom:           5px;
+    font-weight:            bold;
+}
+
+#widgets .widget.tasks .task .markAsDone {
+    opacity:                 0.2;
+}
+
+#widgets .widget.tasks .task:hover .markAsDone {
+    opacity:                   1;
+}
+
+#widgets .widget.tasks .task .markAsDone:hover {
+    cursor:              pointer;
+}
+
+#widgets .widget.tasks .content {
+    overflow-y: auto;
+    overflow-x: hidden;
+}

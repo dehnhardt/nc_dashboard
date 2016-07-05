@@ -1,0 +1,10 @@
+#widgets .widget .time {
+    color:          blue;
+}
+
+#widgets .widget .content .generateNormal:hover,
+#widgets .widget .content .generateNew:hover,
+#widgets .widget .content .generateProblem:hover,
+#widgets .widget .content .generateError:hover {
+    cursor:      pointer;
+}

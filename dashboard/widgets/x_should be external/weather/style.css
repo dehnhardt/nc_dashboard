@@ -1,0 +1,32 @@
+#widgets .widget.weather .weatherIcon {
+    width:              55px;
+    height:             55px;
+}
+
+#widgets .widget.weather .h1 {
+    font-weight:        bold;
+    font-size:         1.3em;
+    text-align:       center;
+}
+
+#widgets .widget.weather .h2 {
+    font-weight:        bold;
+    text-align:       center;
+}
+
+#widgets .widget.weather .content {
+    padding-top:         5px;
+}
+
+#widgets .widget.weather .text-align-right {
+    text-align:         right;
+}
+
+#widgets .widget.weather .forecastItem {
+    float:               left;
+    padding:   5px 0 5px 10px;
+}
+
+#widgets .widget.weather .forecastTemp {
+    text-align:        center;
+}

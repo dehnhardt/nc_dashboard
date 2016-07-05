@@ -1,0 +1,26 @@
+#widgets .widget.news .newsitem .markAsRead {
+    opacity:                 0.2;
+}
+
+#widgets .widget.news .newsitem:hover .markAsRead {
+    opacity:                   1;
+}
+
+#widgets .widget.news .newsitem .markAsRead:hover {
+    cursor:              pointer;
+}
+
+#widgets .widget.news .content * {
+    white-space:          normal !important;
+}
+
+#widgets .widget.news .content .newsTitle {
+    font-size:             1.2em;
+    font-weight:            bold;
+    padding-top:            10px;
+}
+
+#widgets .widget.news .content .newsPubDate {
+    font-size:             0.8em;
+    padding-bottom:         10px;
+}

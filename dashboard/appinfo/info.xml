@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<info>
+    <id>dashboard</id>
+    <name>Dashboard</name>
+    <description>The dashboard app presents you quick and smart information.</description>
+    <licence>AGPL</licence>
+    <author>Florian Steffens</author>
+    <version>1.7.7 beta</version>
+    <requiremin>7.0.4</requiremin>
+    <requiremax>8.1</requiremax>
+    <namespace>\OCA\Dashboard</namespace>
+
+    <types>
+        <type>productivity</type>
+    </types>
+
+    <category>productivity</category>
+
+    <website>https://github.com/fjies/dashboard</website>
+
+    <bugs>https://github.com/fjies/dashboard/issues?q=is%3Aopen+is%3Aissue+label%3Abug</bugs>
+
+    <repository type="git">https://github.com/fjies/dashboard.git</repository>
+
+    <ocsid>160265</ocsid>
+
+    <standalone />
+
+    <default_enable />
+    <shipped>true</shipped>
+
+    <dependencies>
+        <php min-version="5.4" max-version="5.6"/>
+        <database>sqlite</database>
+        <database>mysql</database>
+        <database>mssql</database>
+        <database>pgsql</database>
+        <lib>curl</lib>
+        <owncloud min-version="7.0.4" max-version="8.1"/>
+    </dependencies>
+</info>

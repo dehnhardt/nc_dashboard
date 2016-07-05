@@ -1,0 +1,38 @@
+#widgets .widget.activity .subject span {
+    white-space: nowrap;
+    font-size: 0.8em;
+}
+
+#widgets .widget.activity .subject {
+    line-height: 1;
+    padding-bottom: 5px;
+}
+
+#widgets .widget.activity .priority-50 {
+    color: darkred;
+}
+
+#widgets .widget.activity .priority-40 {
+    color: darkorange;
+}
+
+#widgets .widget.activity .priority-30 {
+    color: black;
+}
+
+#widgets .widget.activity .priority-20 {
+    color: darkblue;
+}
+
+#widgets .widget.activity .priority-10 {
+    color: darkgreen;
+}
+
+#widgets .widget.activity .h30break {
+    height: 30px;
+    clear: both;
+}
+
+#widgets .widget.activity .content {
+    padding-top: 10px;
+}

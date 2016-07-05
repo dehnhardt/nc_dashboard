@@ -1,0 +1,25 @@
+#widgets .widget .time {
+    color:              blue;
+}
+
+#widgets .widget .content .generateNormal:hover,
+#widgets .widget .content .generateNew:hover,
+#widgets .widget .content .generateProblem:hover,
+#widgets .widget .content .generateError:hover {
+    cursor:           pointer;
+}
+
+#widgets .widget.mail .from,
+#widgets .widget.mail .datetime {
+    color:   rgb(150,150,150);
+    font-size:         0.95em;
+}
+
+#widgets .widget.mail .subject {
+    padding-top:         10px;
+}
+
+#widgets .widget.mail .content {
+    overflow-y: auto;
+    overflow-x: hidden;
+}

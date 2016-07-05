@@ -1,0 +1,15 @@
+#dashboardSettings h3 {
+    padding-top:        20px;
+}
+
+#dashboardSettings .widgets .widget {
+    float:                   left;
+    padding-left:            10px;
+    padding-right:           30px;
+    padding-bottom:          10px;
+}
+
+#dashboardSettings .widgets .widget:last-child {
+    float:              none;
+    clear:              both;
+}

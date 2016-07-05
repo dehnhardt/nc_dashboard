@@ -1,0 +1,9 @@
+#widgets .widget.contacts .contactSearch {
+    width:                    97%;
+    margin-top:              12px;
+}
+
+#widgets .widget.contacts .name {
+    padding-top:             20px;
+    font-weight:             bold;
+}

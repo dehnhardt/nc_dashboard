@@ -1,0 +1,93 @@
+.controlPlus {
+    position:                       fixed;
+    z-index:                          180;
+    right:                           12px;
+    bottom:                           5px;
+    font-size:                        4em;
+    padding:          12px 12px 14px 12px;
+    background-color:    rgb(240,240,240);
+    color:                           gray;
+}
+
+.controlPlus:hover {
+    background-color:    rgb(230,230,230);
+    cursor:                       pointer;
+}
+
+.overlay {
+    position:                       fixed;
+    z-index:                          199;
+    top:                              0px;
+    left:                             0px;
+    height:                          100%;
+    width:                           100%;
+    background-color:                #000;
+    -ms-filter:       "Alpha(Opacity=75)"; /* IE 8 */
+    filter:             alpha(opacity=75); /* IE5-7 */
+    -moz-opacity:                    0.75; /* Mozilla */
+    opacity:                         0.75;
+}
+
+.overlayArea {
+    position:                       fixed;
+    top:                              50%;
+    left:                             50%;
+    margin-left:                   -300px;
+    margin-top:                    -200px;
+    z-index:                          200;
+    width:                          600px;
+    height:                         400px;
+    background-color:                #fff;
+    text-align:                      left;
+    overflow:                        auto;
+}
+
+.overlayArea h1 {
+    font-size:                      1.7em;
+    padding:          20px 10px 10px 10px;
+}
+
+.widgetChoice .widget {
+    float:                           left;
+    background-color:    rgb(240,240,240);
+    margin:                          10px;
+    height:                         100px;
+    width:                          120px;
+}
+
+.widgetChoice .widget:hover {
+    background-color:    rgb(220,220,220);
+    cursor:                       pointer;
+}
+
+.widgetChoice h2,
+.widgetChoice .icon,
+.widgetChoice .icon img,
+.widgetChoice .widget:hover {
+    cursor:                       pointer;
+}
+
+.widgetChoice .widget h2 {
+    font-size:                      1.2em;
+    padding:          10px 15px 10px 15px;
+    text-align:                    center;
+}
+
+.widgetChoice .widget .icon img {
+    max-width:                       50px;
+}
+
+.widgetChoice .widget .icon {
+    text-align:                    center;
+}
+
+.overlayArea .close {
+    position:                    absolute;
+    top:                              0px;
+    right:                            5px;
+    padding:                          3px;
+}
+
+.overlayArea .close:hover {
+    cursor:                       pointer;
+}
