@@ -464,7 +464,7 @@ dashboard = {
 
         $.ajax({
             url: url,
-            method: 'PUT',
+            method: 'POST',
             data: data
         }).done(function (response) {
             if( dashboard.debug ) {

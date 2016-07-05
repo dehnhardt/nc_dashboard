@@ -41,10 +41,10 @@ $application->registerRoutes(
             array('name' => 'route_widget_management#get_enabled_widgets',  'url' => '/widget/management/enabled',              'verb' => 'GET'   ),
             array('name' => 'route_widget_management#get_available_widgets','url' => '/widget/management/available',            'verb' => 'GET'   ),
             array('name' => 'route_widget_management#get_basic_conf',       'url' => '/widget/management/basicConf/{wId}',      'verb' => 'GET'   ),
-            array('name' => 'route_widget_management#add_new_instance',     'url' => '/widget/management/add/{wid}',            'verb' => 'PUT'   ),
+            array('name' => 'route_widget_management#add_new_instance',     'url' => '/widget/management/add/{wid}',            'verb' => 'POST'   ),
             array('name' => 'route_widget_management#remove_instance',      'url' => '/widget/management/remove/{wiid}',        'verb' => 'DELETE'),
-            array('name' => 'route_widget_management#enable_widget_group',  'url' => '/widget/management/enable/{wIdG}',        'verb' => 'PUT'   ),
-            array('name' => 'route_widget_management#disable_widget_group', 'url' => '/widget/management/disable/{wIdG}',       'verb' => 'PUT'   ),
+            array('name' => 'route_widget_management#enable_widget_group',  'url' => '/widget/management/enable/{wIdG}',        'verb' => 'POST'   ),
+            array('name' => 'route_widget_management#disable_widget_group', 'url' => '/widget/management/disable/{wIdG}',       'verb' => 'POST'   ),
 
             // settings
             array('name' => 'route_settings#get_config',                    'url' => '/settings/{key}',                         'verb' => 'GET'   ),

@@ -40,7 +40,7 @@ dashboard = {
         }
         $.ajax({
             url: url,
-            method: 'PUT'
+            method: 'POST'
         }).done(function (r) {
             if(r.success == 0) {
                 if( dashboard.debug ) {
