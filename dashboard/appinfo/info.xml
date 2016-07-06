@@ -7,7 +7,7 @@
     <author>Florian Steffens</author>
     <version>1.7.7 beta</version>
     <requiremin>7.0.4</requiremin>
-    <requiremax>8.1</requiremax>
+    <requiremax>9.1</requiremax>
     <namespace>\OCA\Dashboard</namespace>
 
     <types>
@@ -16,11 +16,11 @@
 
     <category>productivity</category>
 
-    <website>https://github.com/fjies/dashboard</website>
+    <website>https://github.com/dehnhardt/nc_dashboard</website>
 
-    <bugs>https://github.com/fjies/dashboard/issues?q=is%3Aopen+is%3Aissue+label%3Abug</bugs>
+    <bugs>https://github.com/dehnhardt/nc_dashboard/issues</bugs>
 
-    <repository type="git">https://github.com/fjies/dashboard.git</repository>
+    <repository type="git">https://github.com/dehnhardt/nc_dashboard.git</repository>
 
     <ocsid>160265</ocsid>
 
@@ -36,6 +36,6 @@
         <database>mssql</database>
         <database>pgsql</database>
         <lib>curl</lib>
-        <owncloud min-version="7.0.4" max-version="8.1"/>
+        <owncloud min-version="7.0.4" max-version="9.1"/>
     </dependencies>
 </info>
