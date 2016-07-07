@@ -10,8 +10,8 @@
     <p><?php p($l->t('Here you can enable widgets for different groups or all users.')); ?></p>
     <div class="widgets">
 
-        <?
-        foreach($_['availableWidgets'] as $widget) { ?>
+        <?php
+        foreach($_['availableWidgets'] as $widget) {?>
             <div class="widget">
                 <h3><?php p($widget); ?></h3>
                 <div class="groups">
@@ -38,7 +38,7 @@
                     } ?>
                 </div>
             </div>
-        <?
+        <?php
         } ?>
         <div class="widget"></div>
     </div>
