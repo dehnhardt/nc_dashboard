@@ -55,13 +55,13 @@ class WidgetManagementService {
         foreach ($allWidgets as $widget) {
             $enabledGroups = explode(':', $widget['enabled_groups']);
             //TODO eventually reenable filter by group
-            /*if($filterByUser) {
+            if($filterByUser) {
                 if($this->isWidgetForUserAllowed($this->user, $enabledGroups)) {
                     $return[] = $widget['wId'];
                 }
-            } else {*/
+            } else {
                 $return[] = $widget['wId'];
-            //}
+            }
         }
         return $return;
     }
