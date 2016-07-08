@@ -4,7 +4,7 @@
     <name>Dashboard</name>
     <description>The dashboard app presents you quick and smart information.</description>
     <licence>AGPL</licence>
-    <author>Florian Steffens</author>
+    <author>Florian Steffens, Holger Dehnhardt</author>
     <version>1.7.7 beta</version>
     <requiremin>7.0.4</requiremin>
     <requiremax>9.1</requiremax>
