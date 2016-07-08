@@ -12,7 +12,6 @@
 namespace OCA\Dashboard\AppInfo;
 
 
-use OC_L10N;
 use OCP\App;
 use OCP\Util;
 
