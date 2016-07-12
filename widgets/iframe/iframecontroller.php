@@ -19,7 +19,7 @@ class IframeController extends WidgetController implements IWidgetController {
     // interface needed methods ------------------------------------
 
     public function setBasicValues() {
-        $this->icon     = Util::imagePath('dashboard', 'icons/71.png');
+        $this->icon     = \OC::$server->getURLGenerator()->imagePath('dashboard', 'icons/71.png');
         $this->refresh  =                                            0;
         $this->wId      =                                     'iframe';
         $this->name     =                     $this->L10N->t('iFrame');

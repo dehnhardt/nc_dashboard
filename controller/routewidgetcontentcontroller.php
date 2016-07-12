@@ -197,7 +197,7 @@ class RouteWidgetContentController extends Controller {
             $widgetObject   = $this->getWidgetControllerObject($key.'-0');
             $widgets[] = array(
                 'wId'   => $widgetObject->getConfig('wId'),
-                'icon'  => Util::imagePath('dashboard', $widgetObject->getConfig('icon')),
+                'icon'  => \OC::$server->getURLGenerator()->imagePath('dashboard', $widgetObject->getConfig('icon')),
                 'name'  => $widgetObject->getConfig('wName')
             );
         }

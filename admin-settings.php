@@ -6,7 +6,7 @@
  * Time: 08:10
  */
 
-\OC_Util::checkAdminUser();
+OCP\User::checkAdminUser();
 
 /*
 \OCP\Util::addStyle('templateeditor', 'settings-admin');

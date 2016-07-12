@@ -67,7 +67,7 @@ class WeatherTemplate extends WidgetTemplate implements IWidgetTemplate {
         if( count($list)>0 ) {
             foreach ($list as $item) {
                 $html .= '<div class="forecastItem">';
-                $html .= '  <img class="weatherIcon" src="' . Util::imagePath('dashboard', $this->getIconMapping($this->p($item['weather'][0]['icon']))) . '" alt="weather icon" /><br>';
+                $html .= '  <img class="weatherIcon" src="' . \OC::$server->getURLGenerator()->imagePath('dashboard', $this->getIconMapping($this->p($item['weather'][0]['icon']))) . '" alt="weather icon" /><br>';
                 $html .= '  <div class="forecastTemp">' . substr($this->l10n->l('date', $this->p($item['dt'])), 0, -4) . '<br>' . $this->round($this->p($item['temp']['day'])) . $this->getTemperatureUnit($this->p($data['unit'])) . '</div>';
                 $html .= '</div>';
             }
@@ -209,9 +209,9 @@ class WeatherTemplate extends WidgetTemplate implements IWidgetTemplate {
         $html .= '<td>';
         $html .=    '<div class="h1">'.$data['city'].'</div>';
         $html .=    '<div class="align-center">';
-        $html .=        '<img class="weatherIcon" src="'.Util::imagePath( 'dashboard', $this->getIconMapping($this->p($data['weatherData']['list'][0]['weather'][0]['icon'])) ).'" alt="weather icon" />';
+        $html .=        '<img class="weatherIcon" src="'.\OC::$server->getURLGenerator()->imagePath( 'dashboard', $this->getIconMapping($this->p($data['weatherData']['list'][0]['weather'][0]['icon'])) ).'" alt="weather icon" />';
         $html .=        '&nbsp;&nbsp;&nbsp;';
-        $html .=        '<img class="weatherIcon" src="'.Util::imagePath( 'dashboard', $this->getIconMapping($this->p($data['weatherData']['list'][1]['weather'][0]['icon'])) ).'" alt="weather icon" />';
+        $html .=        '<img class="weatherIcon" src="'.\OC::$server->getURLGenerator()->imagePath( 'dashboard', $this->getIconMapping($this->p($data['weatherData']['list'][1]['weather'][0]['icon'])) ).'" alt="weather icon" />';
         $html .=    '</div>';
         $html .= '</td>';
         return $html;

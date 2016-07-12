@@ -13,9 +13,8 @@ namespace OCA\Dashboard\AppInfo;
 
 
 use OCP\App;
-use OCP\Util;
 
-App::addNavigationEntry(array(
+\OC::$server->getNavigationManager()->add(array(
     // the string under which your app will be referenced in owncloud
     'id' => 'dashboard',
 
@@ -24,11 +23,11 @@ App::addNavigationEntry(array(
     'order' => 10,
 
     // the route that will be shown on startup
-    'href' => Util::linkToRoute('dashboard.route_page.index'),
+    'href' => \OC::$server->getURLGenerator()->linkToRoute('dashboard.route_page.index'),
 
     // the icon that will be shown in the navigation
     // this file needs to exist in img/
-    'icon' => Util::imagePath('dashboard', 'dashboard.svg'),
+    'icon' => \OC::$server->getURLGenerator()->imagePath('dashboard', 'dashboard.svg'),
 
     // the title of your application. This will be used in the
     // navigation or on the settings page of your app

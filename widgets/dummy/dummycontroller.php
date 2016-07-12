@@ -12,16 +12,14 @@ use OC;
 use OCA\Dashboard\Widgets\IWidgetController;
 use OCA\Dashboard\Widgets\status;
 use OCA\Dashboard\Widgets\WidgetController;
-use OCP\Util;
-
 
 class DummyController extends WidgetController implements IWidgetController {
 
 
     // interface needed methods ------------------------------------
 
-    public function setBasicValues() {
-        $this->icon     =  Util::imagePath('dashboard', 'icons/9.png');
+    public function setBasicValues() {    	
+        $this->icon     =  \OC::$server->getURLGenerator()->imagePath('dashboard', 'icons/9.png');
         $this->refresh  =                                           30;
         $this->wId      =                                      'dummy';
         $this->name     =                      $this->L10N->t('Dummy');

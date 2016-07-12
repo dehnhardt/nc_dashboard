@@ -10,11 +10,9 @@ namespace OCA\Dashboard\Widgets;
 
 
 use OC\DateTimeFormatter;
-use OC_Util;
 use OCA\Dashboard\Services\WidgetSettingsService;
 use OCA\Dashboard\Utils\Helper;
 use OCP\IL10N;
-use OCP\Util;
 
 abstract class WidgetTemplate implements IWidgetTemplate {
 
@@ -73,7 +71,7 @@ abstract class WidgetTemplate implements IWidgetTemplate {
      * @return array|string
      */
     protected function p( $string ) {
-        return OC_Util::sanitizeHTML($string);
+        return \OCP\Util::sanitizeHTML($string);
     }
 
     /**

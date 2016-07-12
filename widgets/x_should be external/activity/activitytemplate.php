@@ -39,7 +39,7 @@ class ActivityTemplate extends WidgetTemplate implements IWidgetTemplate {
             $link           = $this->p($activity['link']);
             $subject        = $this->p($activity['subject']);
             $sSub           = $this->getNiceSmallText($this->p($activity['subject']));
-            $smallSubject   = \OC_Util::sanitizeHTML($sSub);
+            $smallSubject   = \OCP\Util::sanitizeHTML($sSub);
             $time           = $this->getRelativeTime($this->p($activity['date']));
             $html .= '<tr><td><div '.$prioritystyle.' subject"><a class="preview preview-dir-icon" href="'.$link.'" title="'.$subject.'">'.$smallSubject.'</a><br /><span class="hoverInfo" data-opacitynormal="0.5">'.$time.'</span></div></td></tr>';
         }
