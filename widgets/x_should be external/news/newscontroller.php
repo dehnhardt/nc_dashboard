@@ -136,7 +136,7 @@ class NewsController extends WidgetController implements IWidgetController {
         if( $itembusinesslayer instanceof \OCA\News\Service\ItemService) {
             return $this->getNewsFromItemService($itembusinesslayer, $maxItemAge);
         } else {
-            \OC_Log::write('dashboard', 'no correct class found for fetching news', \OC_Log::WARN);
+            \OCP\Util::writeLog('dashboard', 'no correct class found for fetching news', \OCP\Util::WARN);
             return array();
         }
     }

@@ -48,7 +48,7 @@ class WidgetHashService {
             return false;
         } else {
             if( !$this->widgetHashDAO->insertHash($wIId, $this->user, $hash) ) {
-                \OC_Log::write('dashboard',"could not insert hash", \OC_Log::WARN);
+                \OCP\Util::writeLog('dashboard',"could not insert hash", \OCP\Util::WARN);
             }
             return true;
         }

@@ -181,7 +181,7 @@ class WeatherController extends WidgetController implements IWidgetController {
         $content = curl_exec($ch);
         curl_close($ch);
         if($content==null || strlen($content) <= 30) {
-            \OC_Log::write('dashboard', 'could not fetch weather data (url='.$url.')', \OC_Log::DEBUG);
+            \OCP\Util::writeLog('dashboard', 'could not fetch weather data (url='.$url.')', \OCP\Util::DEBUG);
             $content = '';
         }
         return $content;

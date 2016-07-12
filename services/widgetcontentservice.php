@@ -37,6 +37,12 @@ class WidgetContentService {
         /** @var $widgetController \OCA\Dashboard\Widgets\IWidgetController */
         $widgetController   = $this->widgetManagementService->getInstance($wIId, 'controller');
 
+        if( $widgetController ){
+        	\OCP\Util::writeLog('Dashboard', 'instance of '.$wIId.' controller created', \OCP\Util::DEBUG);
+        } else{
+        	\OCP\Util::writeLog('Dashboard', 'can not get instance of '.$wIId.' controller', \OCP\Util::ERROR);
+        }
+        
         /** @var $widgetTemplate  \OCA\Dashboard\Widgets\IWidgetTemplate */
         $widgetTemplate     = $this->widgetManagementService->getInstance($wIId, 'template');
 
@@ -58,7 +64,13 @@ class WidgetContentService {
     public function getContent($wIId) {
         /** @var $widgetController \OCA\Dashboard\Widgets\IWidgetController */
         $widgetController   = $this->widgetManagementService->getInstance($wIId, 'controller');
-
+        
+        if( $widgetController ){
+        	\OCP\Util::writeLog('Dashboard', 'instance of '.$wIId.' controller created', \OCP\Util::DEBUG);
+        } else{
+        	\OCP\Util::writeLog('Dashboard', 'can not get instance of '.$wIId.' controller', \OCP\Util::ERROR);
+        }
+        
         /** @var $widgetTemplate  \OCA\Dashboard\Widgets\IWidgetTemplate */
         $widgetTemplate     = $this->widgetManagementService->getInstance($wIId, 'template');
 
@@ -88,7 +100,7 @@ class WidgetContentService {
                 'success'   => $widgetController->$method($value)
             );
         } else {
-            \OC_Log::write('dashboard', 'method \'$method\' for widget \'$wIId\' not found', \OC_Log::WARN);
+            \OCP\Util::writeLog('dashboard', 'method \'$method\' for widget \'$wIId\' not found', \OCP\Util::WARN);
             return array();
         }
     }

@@ -66,7 +66,7 @@ class BitcoinController extends WidgetController implements IWidgetController {
             $this->json = json_decode($con);
             return true;
         } else {
-            \OC_Log::write('dashboard',"Bitcoin price could not be loaded.", \OC_Log::WARN);
+            \OCP\Util::writeLog('dashboard',"Bitcoin price could not be loaded.", \OCP\Util::WARN);
             return false;
         }
     }

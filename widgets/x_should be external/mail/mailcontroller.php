@@ -110,14 +110,14 @@ class MailController extends WidgetController implements IWidgetController {
 
         // validation
         if( $host == '' || $user == '') {
-            \OC_Log::write('dashboard', 'host or user are missing for mail widget', \OC_Log::WARN);
+            \OCP\Util::writeLog('dashboard', 'host or user are missing for mail widget', \OCP\Util::WARN);
         } else {
             $loginString = $this->getLoginString($host, $port, $folder, $cypher, $mode);
             $this->connection = $this->login($loginString, $user, $pass);
         }
         if( !$this->connection ) {
             $this->setStatus($this::STATUS_PROBLEM);
-            \OC_Log::write('dashboard', 'could not connect to mailbox in mail widget', \OC_Log::ERROR);
+            \OCP\Util::writeLog('dashboard', 'could not connect to mailbox in mail widget', \OCP\Util::ERROR);
             return false;
         } else {
             return true;
@@ -129,7 +129,7 @@ class MailController extends WidgetController implements IWidgetController {
         if($stream) {
             return $stream;
         } else {
-            \OC_Log::write('dashboard', 'mail widget connection-string: '.$loginString, \OC_Log::ERROR);
+            \OCP\Util::writeLog('dashboard', 'mail widget connection-string: '.$loginString, \OCP\Util::ERROR);
             return null;
         }
     }

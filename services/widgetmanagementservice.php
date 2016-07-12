@@ -117,7 +117,7 @@ class WidgetManagementService {
                 }
             }
         }
-        \OC_Log::write('dashboard',"instance ".$type." from ".$wIId." could not be loaded.", \OC_Log::WARN);
+        \OCP\Util::writeLog('dashboard',"instance ".$type." from ".$wIId." could not be loaded.", \OCP\Util::WARN);
         return null;
     }
 
@@ -136,7 +136,7 @@ class WidgetManagementService {
      */
     public function addWidget($wId, $appName, $controllerServiceName, $templateServiceName, $special, $cssPaths, $jsPaths) {
         $result = $this->widgetsDAO->insertIfNotExist($wId, $appName, $controllerServiceName, $templateServiceName, $special, $cssPaths, $jsPaths);
-        //\OC_Log::write('dashboard',"widget could not be added.", \OC_Log::WARN);
+        //\OCP\Util::writeLog('dashboard',"widget could not be added.", \OCP\Util::WARN);
         return $result;
     }
 
@@ -169,8 +169,10 @@ class WidgetManagementService {
      */
     private function getServiceFromAppContainer($appName, $serviceName) {
         $appNamespace   = '\OCA\\'.strtolower($appName).'\AppInfo\Application';
+        \OCP\Util::writeLog('dashboard',"app namespace: ".$appNamespace.' servicename: '.$serviceName, \OCP\Util::DEBUG);
+        
         if( !class_exists($appNamespace) ) {
-            \OC_Log::write('dashboard',"unknown app: ".$appNamespace, \OC_Log::WARN);
+            \OCP\Util::writeLog('dashboard',"unknown app: ".$appNamespace, \OCP\Util::WARN);
             return null;
         }
         /** @var $app \OCP\AppFramework\App */
