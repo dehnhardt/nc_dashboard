@@ -6,8 +6,6 @@
     <licence>AGPL</licence>
     <author>Florian Steffens, Holger Dehnhardt</author>
     <version>1.7.7 beta</version>
-    <requiremin>7.0.4</requiremin>
-    <requiremax>9.1</requiremax>
     <namespace>\OCA\Dashboard</namespace>
 
     <types>
@@ -24,10 +22,7 @@
 
     <ocsid>160265</ocsid>
 
-    <standalone />
-
     <default_enable />
-    <shipped>true</shipped>
 
     <dependencies>
         <php min-version="5.4"/>
