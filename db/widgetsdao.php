@@ -48,21 +48,28 @@ class WidgetsDAO {
      * @param array $jsPaths
      * @return bool
      */
-    public function insertIfNotExist($wId, $appName, $controllerServiceName, $templateServiceName, $special='', $cssPaths=array(), $jsPaths=array()) {
+    public function insertIfNotExist($wId, $appName, $version, $controllerServiceName, $templateServiceName, $special='', $cssPaths=array(), $jsPaths=array()) {
         $cssPaths   = implode(':', $cssPaths);
         $jsPaths    = implode(':', $jsPaths);
-        $sql        = 'SELECT count(id) as counter FROM `'.$this->table.'` WHERE `wid` LIKE ?';
+        $sql        = 'SELECT version FROM `'.$this->table.'` WHERE `wid` LIKE ?';
         $query      = $this->db->prepareQuery($sql);
         $result     = $query->execute(array($wId));
         $row        = $result->fetchRow();
-        if( $row['counter'] == 0 ) {
-            $sql = 'INSERT INTO `'.$this->table.'`(`wid`, `app_name`, `controller_service_name`, `template_service_name`, `enabled_groups`, `special`, `css_paths`, `js_paths`) VALUES(?,?,?,?,?,?,?,?)';
-            $params = array($wId, $appName, $controllerServiceName, $templateServiceName, '', $special, $cssPaths, $jsPaths);
+        if( ! $row ) {
+            $sql = 'INSERT INTO `'.$this->table.'`(`wid`, `version`, `app_name`, `controller_service_name`, `template_service_name`, `enabled_groups`, `special`, `css_paths`, `js_paths`) VALUES(?,?,?,?,?,?,?,?,?)';
+            $params = array($wId, $version, $appName, $controllerServiceName, $templateServiceName, 'all', $special, $cssPaths, $jsPaths);
+            $query = $this->db->prepareQuery($sql);
+            $execute = $query->execute( $params );
+            return $execute;
+        } else if( $row['version'] != $version ) {
+            $sql = 'UPDATE '.$this->table.
+            	' set `version` = ?, `app_name` = ?, `controller_service_name` = ?, `template_service_name` = ?, `special` = ?, `css_paths` = ?, `js_paths` = ? where `wid` = ?'; 
+            $params = array( $version, $appName, $controllerServiceName, $templateServiceName, $special, $cssPaths, $jsPaths, $wId);
             $query = $this->db->prepareQuery($sql);
             $execute = $query->execute( $params );
             return $execute;
         } else {
-            return false;
+        	return false;
         }
     }
 

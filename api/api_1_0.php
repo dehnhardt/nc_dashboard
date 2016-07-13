@@ -31,9 +31,11 @@ class Api_1_0 {
         $special    = (isset($widget['special']))   ? $widget['special']    : '';
         $css        = (isset($widget['css']))       ? $widget['css']        : array();
         $js         = (isset($widget['js']))        ? $widget['js']         : array();
+        $version    = (isset($widget['version']))   ? $widget['version']	: 1;
         return $this->widgetManagementService->addWidget(
             $widget['wId'],
             $widget['appName'],
+        	$version,
             $widget['controllerServiceName'],
             $widget['templateServiceName'],
             $special,

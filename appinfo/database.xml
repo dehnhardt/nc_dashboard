@@ -96,6 +96,12 @@
                 <length>4</length>
             </field>
             <field>
+                <name>version</name>
+                <type>decimal</type>
+                <default>1</default>
+                <notnull>true</notnull>
+            </field>
+            <field>
                 <name>wid</name>
                 <type>text</type>
                 <notnull>true</notnull>
