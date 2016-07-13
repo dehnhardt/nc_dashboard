@@ -82,8 +82,8 @@ class WeatherController extends WidgetController implements IWidgetController {
         $url   .= '&lang='.$lang;
 
         $unit   = $this->getConfig('unit', 'c');
-        $url   .= ($unit=='c') ? '&units=metric':'';
-        $url   .= ($unit=='i') ? '&units=imperial':'';
+        $url   .= ($unit==='c') ? '&units=metric':'';
+        $url   .= ($unit==='i') ? '&units=imperial':'';
         return $url;
     }
 
@@ -102,8 +102,8 @@ class WeatherController extends WidgetController implements IWidgetController {
         $url   .= '&lang='.$lang;
 
         $unit   = $this->getConfig('unit', 'c');
-        $url   .= ($unit=='c') ? '&units=metric':'';
-        $url   .= ($unit=='i') ? '&units=imperial':'';
+        $url   .= ($unit==='c') ? '&units=metric':'';
+        $url   .= ($unit==='i') ? '&units=imperial':'';
         return $url;
     }
 
@@ -120,12 +120,12 @@ class WeatherController extends WidgetController implements IWidgetController {
         $url        = $this->getForecastUrl();
         $content    = '';
         $n          = 0;
-        while( $content == '' && $n < 5) {
+        while( $content === '' && $n < 5) {
             $content    = $this->fetchContent($url);
             $n++;
             sleep(0.5);
         }
-        if( $content == '' ) {
+        if( $content === '' ) {
             $this->setStatus($this::STATUS_PROBLEM);
         }
 
@@ -149,12 +149,12 @@ class WeatherController extends WidgetController implements IWidgetController {
         $url        = $this->getWeatherNowUrl();
         $content    = '';
         $n          = 0;
-        while( $content == '' && $n < 3) {
+        while( $content === '' && $n < 3) {
             $content    = $this->fetchContent($url);
             $n++;
             sleep(0.5);
         }
-        if( $content == '' ) {
+        if( $content === '' ) {
             $this->setStatus($this::STATUS_PROBLEM);
         }
 
@@ -180,7 +180,7 @@ class WeatherController extends WidgetController implements IWidgetController {
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
         $content = curl_exec($ch);
         curl_close($ch);
-        if($content==null || strlen($content) <= 30) {
+        if($content===null || strlen($content) <= 30) {
             \OCP\Util::writeLog('dashboard', 'could not fetch weather data (url='.$url.')', \OCP\Util::DEBUG);
             $content = '';
         }

@@ -62,7 +62,7 @@ class BitcoinController extends WidgetController implements IWidgetController {
 	 */
     private function getJSON() {
         $con = @file_get_contents($this->url);
-        if($con != '') {
+        if($con !== '') {
             $this->json = json_decode($con);
             return true;
         } else {

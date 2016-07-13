@@ -101,7 +101,7 @@ class TasksController extends WidgetController implements IWidgetController {
         if( $onlyNotCompleted ) {
             $return = array();
             foreach ($tasks['data']['tasks'] as $task) {
-                if( $task['completed'] != true && $task['complete'] != '100') {
+                if( $task['completed'] !== true && $task['complete'] !== '100') {
                     $return[] = $task;
                 }
             }
@@ -122,7 +122,7 @@ class TasksController extends WidgetController implements IWidgetController {
     private function getCalendars() {
         $calendars = Array();
         foreach( \OC_Calendar_Calendar::allCalendars($this->user, true) as $cal ) {
-            if( $cal['active'] == '1' ) {
+            if( $cal['active'] === '1' ) {
                 $calendars[$cal['id']] = array(
                     'name'      => $cal['displayname'],
                     'color'     => $cal['calendarcolor']

@@ -169,7 +169,7 @@ class WeatherTemplate extends WidgetTemplate implements IWidgetTemplate {
     }
 
     private function getWindSpeed($speed, $unit) {
-        if( $unit == 'c') {
+        if( $unit === 'c') {
             $speed = round($speed * 3.6);
         }
         return $speed;
@@ -269,10 +269,10 @@ class WeatherTemplate extends WidgetTemplate implements IWidgetTemplate {
     private function round($value) {
         $value = intval($value);
         $v = round($value);
-        if($v == '-0') {
+        if($v === '-0') {
             $v = '0';
         }
-        if( substr($v, 0, 1) != '-') {
+        if( substr($v, 0, 1) !== '-') {
             $v = '&nbsp;'.$v;
         }
         return $v;

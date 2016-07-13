@@ -159,7 +159,7 @@ class RouteWidgetContentController extends Controller {
         $widgetController   = $this->getWidgetControllerObject($wIId);
 
         // call method if is set
-        if ($method != null && $method != '' && method_exists($widgetController, $method)) {
+        if ($method !== null && $method !== '' && method_exists($widgetController, $method)) {
             return array( 'success' => $widgetController->$method($value) );
         }
         return null;

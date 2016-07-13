@@ -115,7 +115,7 @@ class WidgetContentService {
      */
     private function calculateStatus($wIId, $data=null) {
         $status = (isset($data['status'])) ? $data['status']: Status::STATUS_OKAY;
-        if( $status == Status::STATUS_OKAY && $this->widgetHashService->isNew($wIId, $data) ) {
+        if( $status === Status::STATUS_OKAY && $this->widgetHashService->isNew($wIId, $data) ) {
             return Status::STATUS_NEW;
         }
         return $status;

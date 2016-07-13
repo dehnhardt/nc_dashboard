@@ -61,7 +61,7 @@ class WidgetsDAO {
             $query = $this->db->prepareQuery($sql);
             $execute = $query->execute( $params );
             return $execute;
-        } else if( $row['version'] != $version ) {
+        } else if( $row['version'] !== $version ) {
             $sql = 'UPDATE '.$this->table.
             	' set `version` = ?, `app_name` = ?, `controller_service_name` = ?, `template_service_name` = ?, `special` = ?, `css_paths` = ?, `js_paths` = ? where `wid` = ?'; 
             $params = array( $version, $appName, $controllerServiceName, $templateServiceName, $special, $cssPaths, $jsPaths, $wId);
@@ -142,7 +142,7 @@ class WidgetsDAO {
         $query      = $this->db->prepareQuery($sql);
         $result     = $query->execute(array($wId));
         $row        = $result->fetchRow();
-        if( isset($row['css_paths']) && $row['css_paths'] != '' ) {
+        if( isset($row['css_paths']) && $row['css_paths'] !== '' ) {
             return explode(':', $row['css_paths']);
         } else {
             return array();
@@ -161,7 +161,7 @@ class WidgetsDAO {
         $query      = $this->db->prepareQuery($sql);
         $result     = $query->execute(array($wId));
         $row        = $result->fetchRow();
-        if( isset($row['js_paths']) && $row['js_paths'] != '' ) {
+        if( isset($row['js_paths']) && $row['js_paths'] !== '' ) {
             return explode(':', $row['js_paths']);
         } else {
             return array();
@@ -173,7 +173,7 @@ class WidgetsDAO {
         $query      = $this->db->prepareQuery($sql);
         $result     = $query->execute(array($wId));
         $row        = $result->fetchRow();
-        if( isset($row['enabled_groups']) && $row['enabled_groups'] != '' ) {
+        if( isset($row['enabled_groups']) && $row['enabled_groups'] !== '' ) {
             return explode(':', $row['enabled_groups']);
         } else {
             return array();

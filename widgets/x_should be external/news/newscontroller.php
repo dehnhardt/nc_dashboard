@@ -82,7 +82,7 @@ class NewsController extends WidgetController implements IWidgetController {
                     $this->setConfig('lastDetailId', $item['id']);
                     return $key;
                 }
-                if( $item['id'] == $lastDetailId ) {
+                if( $item['id'] === $lastDetailId ) {
                     $foundOldId = true;
                 }
             }

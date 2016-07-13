@@ -141,7 +141,7 @@ abstract class WidgetTemplate implements IWidgetTemplate {
                 if(is_array($setting['options'])) {
                     foreach( $setting['options'] as $key => $option) {
                         $html .= '<option value="'.$key.'"';
-                        if( $value == $key ) {
+                        if( $value === $key ) {
                             $html .= ' selected ';
                         }
                         $html .= '>'.$this->L10N->t($option).'</option>';
@@ -224,20 +224,20 @@ abstract class WidgetTemplate implements IWidgetTemplate {
     private function getHeadHtml( $data ) {
         $html       = '<h1 class="hoverInfo" data-opacitynormal="0.5">';
 
-        if( isset($data['link']) != null && $data['link'] != '' ) {
+        if( isset($data['link']) !== null && $data['link'] !== '' ) {
             $html .= '<a href="'.$data['link'].'">'.$data['name'].'</a>';
         } else {
             $html .= $data['name'];
         }
 
-        if( isset($data['refresh']) && $data['refresh'] != 0 ) {
+        if( isset($data['refresh']) && $data['refresh'] !== 0 ) {
             $html .= '<span class="hoverInfo icon-play iconReload" data-wiid="'.$data['wIId'].'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>';
         }
 
         $html .= '<span class="hoverInfo icon-settings iconSettings">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>';
         $html .= '</h1>';
 
-        if( isset($data['icon']) && $data['icon'] != '' ) {
+        if( isset($data['icon']) && $data['icon'] !== '' ) {
             $html .= '<div class="icon"><img src="'.$data['icon'].'" alt="'.$data['wIId'].' icon" /></div>';
         }
 

@@ -109,7 +109,7 @@ class MailController extends WidgetController implements IWidgetController {
         //$user   = utf8_decode($user);
 
         // validation
-        if( $host == '' || $user == '') {
+        if( $host === '' || $user === '') {
             \OCP\Util::writeLog('dashboard', 'host or user are missing for mail widget', \OCP\Util::WARN);
         } else {
             $loginString = $this->getLoginString($host, $port, $folder, $cypher, $mode);

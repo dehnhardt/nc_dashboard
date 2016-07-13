@@ -148,7 +148,7 @@ abstract class WidgetController extends Controller implements IWidgetController{
                 return intval($return);
                 break;
             case 'bool':
-                if( $return == '1' || $return || $return == 'true' ) {
+                if( $return === '1' || $return || $return === 'true' ) {
                     return true;
                 } else {
                     return false;
@@ -184,7 +184,7 @@ abstract class WidgetController extends Controller implements IWidgetController{
         $this->widgetHashDAO->removeOldHashes();
         $hash = sha1(json_encode($data));
         $usedHash = $this->widgetHashDAO->getHash($this->getConfig('wIId'), $this->user);
-        if( $usedHash == $hash ) {
+        if( $usedHash === $hash ) {
             // update timestamp
             $this->widgetHashDAO->updateHash($this->getConfig('wIId'), $this->user, $hash);
         } else {
