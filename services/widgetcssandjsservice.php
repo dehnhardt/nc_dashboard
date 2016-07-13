@@ -10,7 +10,6 @@ namespace OCA\Dashboard\Services;
 
 
 use OCA\Dashboard\Db\WidgetsDAO;
-use OC_Util;
 
 class WidgetCssAndJsService {
 
@@ -41,7 +40,7 @@ class WidgetCssAndJsService {
         foreach ($stylePaths as $stylePath) {
             // load only once
             if( !in_array($stylePath, $this->loadedStyles) ) {
-                OC_Util::$styles[]      = $stylePath;
+                \OCP\Util::addStyle(NULL, 'apps/'.$stylePath);
                 $this->loadedStyles[]   = $stylePath;
             }
         }
@@ -53,10 +52,8 @@ class WidgetCssAndJsService {
         foreach ($scriptPaths as $scriptPath) {
             // load only once
             if( !in_array($scriptPath, $this->loadedStyles) ) {
-            	//\OCP\Util::addScript('dashboard',$scriptPath);
-                \OC_Util::$scripts[]      = $scriptPath;
-                //\OC_Util::addScript( 'dashboard', $scriptPath );
-                $this->loadedScripts[]   = $scriptPath;
+            	\OCP\Util::addScript( NULL, 'apps/'.$scriptPath);
+            	$this->loadedScripts[]   = $scriptPath;
             }
         }
     }
