@@ -149,6 +149,11 @@
                 <notnull>false</notnull>
                 <length>255</length>
             </field>
+            <field>
+                <name>appUrl</name>
+                <type>text</type>
+                <notnull>false</notnull>
+            </field>
         </declaration>
     </table>
 </database>

@@ -32,12 +32,16 @@ class Api_1_0 {
         $css        = (isset($widget['css']))       ? $widget['css']        : array();
         $js         = (isset($widget['js']))        ? $widget['js']         : array();
         $version    = (isset($widget['version']))   ? $widget['version']	: 1;
+        $url 		= (isset($widget['appUrl']))	? $widget['appUrl']		: null;
+        $enableDefault  	= (isset($widget['enableAll']) && $widget['enableAll']) === true ? true : false; 
         return $this->widgetManagementService->addWidget(
             $widget['wId'],
             $widget['appName'],
         	$version,
+        	$enableDefault,
             $widget['controllerServiceName'],
             $widget['templateServiceName'],
+        	$appUrl,
             $special,
             $css,
             $js
