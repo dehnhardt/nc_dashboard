@@ -1,5 +1,7 @@
 <?php
 
+/* commented becuase otherwise the appchecker shows an error
+* uncomment it when using it
 namespace OCA\[YourApp]\Widget;
 
 use \OCA\Dashboard\Widgets\IWidgetTemplate;
@@ -20,4 +22,4 @@ class OwnNoteTemplate extends WidgetTemplate implements IWidgetTemplate{
 	function getLicenseInfo(){
 		return 'License Info';
 	}
-}
+} */
