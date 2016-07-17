@@ -73,6 +73,15 @@ class WidgetSettingsService {
             return $value;
         }
     }
+    
+    /**
+     * retrieves the url for the app which provides the widget. This URL is referenced in the header of the widget.
+     * @param string $wId
+     */
+    
+    public function getLink( $wId ){
+    	return $this->widgetsDAO->getLink($wId);
+    }
 
     public function getNextWidgetInstanceNumber($wId) {
         $max = intval( $this->widgetConfigDAO->getHighestNo($wId, $this->user) );

@@ -32,8 +32,8 @@ class Api_1_0 {
         $css        = (isset($widget['css']))       ? $widget['css']        : array();
         $js         = (isset($widget['js']))        ? $widget['js']         : array();
         $version    = (isset($widget['version']))   ? $widget['version']	: 1;
-        $url 		= (isset($widget['appUrl']))	? $widget['appUrl']		: null;
-        $enableDefault  	= (isset($widget['enableAll']) && $widget['enableAll']) === true ? true : false; 
+        $link 		= (isset($widget['link']))	 	? $widget['link']		: null;
+        $enableDefault  	= (isset($widget['enableDefault']) && $widget['enableDefault']) === true ? true : false; 
         return $this->widgetManagementService->addWidget(
             $widget['wId'],
             $widget['appName'],
@@ -41,7 +41,7 @@ class Api_1_0 {
         	$enableDefault,
             $widget['controllerServiceName'],
             $widget['templateServiceName'],
-        	$appUrl,
+        	$link,
             $special,
             $css,
             $js

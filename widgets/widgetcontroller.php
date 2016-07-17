@@ -9,10 +9,8 @@
 namespace OCA\Dashboard\Widgets;
 
 
-use OC;
 use OC\DateTimeFormatter;
 use OCA\Dashboard\Services\WidgetSettingsService;
-use OCA\Dashboard\Utils\Helper;
 use OCP\AppFramework\Controller;
 use OCP\IL10N;
 
@@ -92,6 +90,7 @@ abstract class WidgetController extends Controller implements IWidgetController{
             'dimension' => $this->getConfig('dimension', '1x1'),
             'refresh'   => $this->getConfig('refresh', '30', 'int'),
             'icon'      => $this->getConfig('icon'),
+            'link'		=> $this->getConfig('link'),
             'status'    => $this->getStatus()
         );
     }
@@ -135,13 +134,15 @@ abstract class WidgetController extends Controller implements IWidgetController{
                 $value = $this->wId;
                 break;
             case 'link':
-                $value = $this->link;
+                $value = $this->widgetSettingsService->getLink($this->wId);
+        		\OCP\Util::writeLog('dashboard', 'Link: '.$value, \OCP\Util::DEBUG);
                 break;
             default:
                 $value = $this->widgetSettingsService->getConfig($this->wId, $this->wNo, $key, $default);
                 break;
         }
         $return = isset($value) ? $value: $default;
+        
 
         switch( $returnType ) {
             case 'int':

@@ -134,8 +134,8 @@ class WidgetManagementService {
      * @param $jsPaths
      * @return bool|int|\OC_DB_StatementWrapper
      */
-    public function addWidget($wId, $appName, $version, $controllerServiceName, $templateServiceName, $appUrl, $special, $cssPaths, $jsPaths) {
-        $result = $this->widgetsDAO->insertIfNotExist($wId, $appName, $version, $controllerServiceName, $templateServiceName, $appUrl, $special, $cssPaths, $jsPaths);
+    public function addWidget($wId, $appName, $version, $enableDefault, $controllerServiceName, $templateServiceName, $link, $special, $cssPaths, $jsPaths) {
+        $result = $this->widgetsDAO->insertIfNotExist($wId, $appName, $version, $enableDefault, $controllerServiceName, $templateServiceName, $link, $special, $cssPaths, $jsPaths);
         return $result;
     }
 

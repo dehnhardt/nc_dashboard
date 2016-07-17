@@ -150,7 +150,7 @@
                 <length>255</length>
             </field>
             <field>
-                <name>appUrl</name>
+                <name>link</name>
                 <type>text</type>
                 <notnull>false</notnull>
             </field>

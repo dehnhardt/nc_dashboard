@@ -224,7 +224,7 @@ abstract class WidgetTemplate implements IWidgetTemplate {
     private function getHeadHtml( $data ) {
         $html       = '<h1 class="hoverInfo" data-opacitynormal="0.5">';
 
-        if( isset($data['link']) !== null && $data['link'] !== '' ) {
+        if( isset($data['link']) && $data['link'] !== '' ) {
             $html .= '<a href="'.$data['link'].'">'.$data['name'].'</a>';
         } else {
             $html .= $data['name'];
