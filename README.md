@@ -17,15 +17,15 @@ currently we use the class Api_1_0.
 
 The following things has to be done to contribute an widget to the dashboard from another app:
 
-1. Create a folder in your app root directory and name it 'widget'
-2. add two class files to this folder:
+- Create a folder in your app root directory and name it 'widget'
+- add two class files to this folder:
   * [yourapp]controller.php
   * [yourapp]template.php
   * you can find templates for the two files in the example_files folder
     - replace [yourapp] in the files with the technical name of your app (all lowercase)
     - replace [YourApp] in the files with the technical name of your app (mixed case if needed)
     - replace [yourappname] in the files with the descriptive name of your app (all lowercase)
-3. Modify your appinfo/application.php to register the controller and template
+- Modify your appinfo/application.php to register the controller and template
 ```php
 
 /* don't forget the use statements */
@@ -46,7 +46,7 @@ use \OCA\[YourApp]\Widget\[YourApp]Template;
 					);
 		});
 ```
-4. Modify your appinfo/app.php to specify your widget parameters and call the api function
+- Modify your appinfo/app.php to specify your widget parameters and call the api function
 ```php
 /* instantiate an array */
 $widget = array();  
@@ -123,4 +123,4 @@ $container = $app->getContainer();
 $api = $container->query('Api_1_0');
 $api->addWidget($widget);
 ```
-5. If neither my nor you made any mistake, your widget should appear in the list of available widgets in the dashboard.
+- If neither my nor you made any mistake, your widget should appear in the list of available widgets in the dashboard.
