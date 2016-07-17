@@ -124,3 +124,4 @@ $api = $container->query('Api_1_0');
 $api->addWidget($widget);
 ```
 - If neither my nor you made any mistake, your widget should appear in the list of available widgets in the dashboard.
+- otherwise open an issue at https://github.com/dehnhardt/nc_dashboard/issues
