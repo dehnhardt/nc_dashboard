@@ -90,9 +90,11 @@ $widgets[] = $widget;
 $widget = array();
 $widget['wId']                      = 'bitcoin';
 $widget['appName']                  = 'dashboard';
+$widget['version']					= 2;
 $widget['controllerServiceName']    = 'widgetBitcoinController';
 $widget['templateServiceName']      = 'widgetBitcoinTemplate';
 $widget['special']                  = '';
+$widget['link']						= 'https://www.bitstamp.net';
 $widget['css']                      = array(
     'dashboard'.DIRECTORY_SEPARATOR.'widgets'.DIRECTORY_SEPARATOR.'bitcoin'.DIRECTORY_SEPARATOR.'style'
 );
