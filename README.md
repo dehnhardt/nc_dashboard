@@ -51,21 +51,75 @@ use \OCA\[YourApp]\Widget\[YourApp]Template;
 
 4. Modify your appinfo/app.php to specify your widget parameters and call the api function
 
-```
+```php
 /* instantiate an array */
 $widget = array();  
 
-/* *required* use the app-name if you provide only one widget */
+/* 
+*required* 
+use the app-name if your app provides only one widget
+use any other describing name if your app provides more than one widget*/
 $widget['wId']                      = '[yourapp]'; 
-$widget['appName']                  = '[yourapp]'; /* again the app name */
-$widget['controllerServiceName']    = 'widget[YourApp]Controller'; /* the registered name of the widget controller */ 
-$widget['templateServiceName']      = 'widget[YourApp]Template'; /* the registered name of the widget template */
-$widget['special']                  = ''; /* A "Joker"vfor later use... */
-$widget['version']					= 2; /* The version of YOUR widget, increment it if you change any of this parameters */
-$widget['link']						= '/index.php/apps/ownnote/'; /* this is the link which is behind the headline of your widget, you can either link to your app (use the full path: /index.php/apps/[yourapp]/) or to any other internal or external page */
-$widget['enableDefault']			= true;
+
+/* 
+*required* 
+again the app name 
+*/
+$widget['appName']                  = '[yourapp]'; 
+
+/* 
+*required*
+the registered name of the widget controller 
+*/
+$widget['controllerServiceName']    = 'widget[YourApp]Controller'; 
+
+/* 
+*required*
+the registered name of the widget template 
+*/
+$widget['templateServiceName']      = 'widget[YourApp]Template'; 
+
+/* 
+*optional*, default: nothing
+A "Joker" for later use... maybe...
+*/
+$widget['special']                  = '';
+
+/*
+*required*, default: 1
+The version of YOUR widget, don't forget increment it if you change any of these parameters
+In incremented version triggern an update of the stored values
+*/
+$widget['version']					= 1; 
+
+/* 
+*optional*, default: empty
+this is the link which is behind the headline of your widget, you can either link to your app (use the full path: /index.php/apps/[yourapp]/) or to any other internal or external page 
+No link is created if this parameter is omitted
+*/
+$widget['link']						= '/index.php/apps/ownnote/';
+
+/*
+*optional*, default: false
+In the admin settings you can toggle the availability for each widget and each group. If this parameter is set to true, the widget is available for all groups, otherwise the admin has to enable the widget for each group manually
+*/
+$widget['enableDefault']				= true;
+
+/*
+*optional* default: empty
+provide the pathes to aditional cascading style sheets. Separate by ':'. 
+If a folder is given, all contained .css file are included.(presumably)
+*/
 $widget['css']                      = array();
+
+/*
+*optional* default: empty
+provide the pathes to your javascript files. Separate by ':'. 
+If a folder is given, all contained .js file are included.(presumably)
+*/
 $widget['js']                       = array(\OC::$server->getURLGenerator()->linkTo('ownnote', 'widgets/script'));
+
+/*end of parameters*/
 
 $app = new \OCA\Dashboard\AppInfo\Application();
 $container = $app->getContainer();
