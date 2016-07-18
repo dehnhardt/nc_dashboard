@@ -103,17 +103,15 @@ $widget['enableDefault']				= true;
 
 /*
 *optional* default: empty
-provide the pathes to aditional cascading style sheets. Separate by ':'. 
-If a folder is given, all contained .css file are included.(presumably)
+provide the pathes to aditional cascading style sheets as an array. 
 */
-$widget['css']                      = array();
+$widget['css']                      = array('one file');
 
 /*
 *optional* default: empty
-provide the pathes to your javascript files. Separate by ':'. 
-If a folder is given, all contained .js file are included.(presumably)
+provide the pathes to your javascript files as an array. . 
 */
-$widget['js']                       = array(\OC::$server->getURLGenerator()->linkTo('ownnote', 'widgets/script'));
+$widget['js']                       = array('one file', 'another file');
 
 /*end of parameters*/
 
