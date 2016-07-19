@@ -1,7 +1,8 @@
 <?php
 
 /* commented becuase otherwise the appchecker shows an error
-* uncomment it when using it
+** uncomment it when using it
+
 namespace OCA\[YourApp]\Widget;
 
 use \OCA\Dashboard\Widgets\IWidgetTemplate;
