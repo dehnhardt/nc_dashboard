@@ -36,6 +36,7 @@ class RoutePageController extends Controller {
      * @NoCSRFRequired
      */
     public function index() {
+    	\OCP\Util::writeLog('dashboard', '**** call: index', \OCP\Util::DEBUG);
         $this->widgetCssAndJsService->loadAll();
 
         $params = array(

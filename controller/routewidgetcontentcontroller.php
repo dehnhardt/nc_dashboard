@@ -105,7 +105,8 @@ class RouteWidgetContentController extends Controller {
      * @return array
      */
     function x_getComplete($wIId) {
-        $widgetController   = $this->getWidgetControllerObject($wIId);
+    	\OCP\Util::writeLog('dashboard', '**** call: x_getComplete', \OCP\Util::DEBUG);
+    	$widgetController   = $this->getWidgetControllerObject($wIId);
         $widgetTemplate     = $this->getWidgetTemplateObject($wIId);
 
         $widgetHtml         = $widgetTemplate->getHtml($widgetController);
@@ -131,7 +132,8 @@ class RouteWidgetContentController extends Controller {
      * @return array
      */
     function x_getContent($wIId) {
-        $widgetController   = $this->getWidgetControllerObject($wIId);
+    	\OCP\Util::writeLog('dashboard', '**** call: x_getContent', \OCP\Util::DEBUG);
+    	$widgetController   = $this->getWidgetControllerObject($wIId);
         $widgetTemplate     = $this->getWidgetTemplateObject($wIId);
 
         $widgetHtml         = $widgetTemplate->getContentHtml($widgetController->getData());
