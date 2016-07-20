@@ -133,6 +133,14 @@ abstract class WidgetController extends Controller implements IWidgetController{
             case 'wId':
                 $value = $this->wId;
                 break;
+            case 'appName':
+                $value = $this->widgetSettingsService->getAppName($this->wId);
+        		\OCP\Util::writeLog('dashboard', 'AppName: '.$value, \OCP\Util::ERROR);
+                break;
+            case 'appPath':
+            	$value = \OC_App::getAppPath($this->widgetSettingsService->getAppName($this->wId));
+        		\OCP\Util::writeLog('dashboard', 'AppPath: '.$value, \OCP\Util::ERROR);
+                break;
             case 'link':
                 $value = $this->widgetSettingsService->getLink($this->wId);
         		\OCP\Util::writeLog('dashboard', 'Link: '.$value, \OCP\Util::DEBUG);
