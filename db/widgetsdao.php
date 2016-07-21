@@ -9,7 +9,7 @@ class WidgetsDAO {
     private $db;
     private $table;
     
-    private $settings;
+    private $settings = array();
 
     public function __construct(IDb $db) {
         $this->db       = $db;
@@ -88,12 +88,7 @@ class WidgetsDAO {
      * @return bool
      */
     public function getAppName($wId) {
-    	
-    	$this->getSettings ($wId);
-    	
-    	return $this->settings['app_name'];
-    	
-    	/*
+    	    	
         $sql        = 'SELECT `app_name` FROM `'.$this->table.'` WHERE `wid` LIKE ?';
         $query      = $this->db->prepareQuery($sql);
         $result     = $query->execute(array($wId));
@@ -103,7 +98,7 @@ class WidgetsDAO {
         } else {
             return false;
         }
-       */
+       
     }
     
     /**
@@ -114,12 +109,7 @@ class WidgetsDAO {
      * @return bool
      */
     public function getControllerServiceName($wId) {
-    	
-    	$this->getSettings($wId);
-    	
-    	return $this->settings['controller_service_name'];
-    	
-    	/*
+    	    	
         $sql        = 'SELECT `controller_service_name` FROM `'.$this->table.'` WHERE `wid` LIKE ?';
         $query      = $this->db->prepareQuery($sql);
         $result     = $query->execute(array($wId));
@@ -128,7 +118,7 @@ class WidgetsDAO {
             return $row['controller_service_name'];
         } else {
             return false;
-        }*/
+        }
     	
     }
 
@@ -140,11 +130,7 @@ class WidgetsDAO {
      * @return bool
      */
     public function getTemplateServiceName($wId) {
-    	$this->getSettings($wId);
     	
-    	return $this->settings['template_service_name'];
-    	
-    	/*
     	$sql        = 'SELECT `template_service_name` FROM `'.$this->table.'` WHERE `wid` LIKE ?';
         $query      = $this->db->prepareQuery($sql);
         $result     = $query->execute(array($wId));
@@ -153,7 +139,7 @@ class WidgetsDAO {
             return $row['template_service_name'];
         } else {
             return false;
-        }*/
+        }
     }
 
     /**
@@ -163,11 +149,7 @@ class WidgetsDAO {
      * @param $wId
      * @return array
      */
-    public function getCssPaths($wId) {
-    	$this->getSettings($wId);
-   	
-    	//return $this->settings['css_paths'];
-    	
+    public function getCssPaths($wId) {    	
     	
     	$sql        = 'SELECT `css_paths` FROM `'.$this->table.'` WHERE `wid` LIKE ?';
         $query      = $this->db->prepareQuery($sql);
@@ -188,10 +170,7 @@ class WidgetsDAO {
      * @return array
      */
     public function getJsPaths($wId) {
-    	$this->getSettings($wId);
-   	
-    	//return $this->settings['js_paths'];
-    	
+
     	$sql        = 'SELECT `js_paths` FROM `'.$this->table.'` WHERE `wid` LIKE ?';
         $query      = $this->db->prepareQuery($sql);
         $result     = $query->execute(array($wId));
@@ -213,14 +192,7 @@ class WidgetsDAO {
      */
     
     public function getLink($wId) {
-    	$this->getSettings($wId);
     	
-    	$value = $this->settings['link'];
-    	\OCP\Util::writeLog('Dashboard', 'wdgetsdao: '.$wId.' link '.$value, \OCP\Util::DEBUG);
-    	 
-    	return $value;
-    	
-    	/*
     	$sql        = 'SELECT `link` FROM `'.$this->table.'` WHERE `wid` LIKE ?';
     	$query      = $this->db->prepareQuery($sql);
     	$result     = $query->execute(array($wId));
@@ -229,7 +201,7 @@ class WidgetsDAO {
     		return $row['link'];
     	} else {
     		return '';
-    	}*/
+    	}
     }
     
 	public function getAllWidgetSettings($wId){
@@ -238,7 +210,6 @@ class WidgetsDAO {
 		$query      = $this->db->prepareQuery($sql);
 		$result     = $query->execute(array($wId));
 		$row        = $result->fetchRow();
-		//\OCP\Util::writeLog('Dashboard', 'row settings of '.$wId.' - '.print_r($row, true), \OCP\Util::DEBUG);
 		$settings = array();
 		if( $row ) {
 			$settings['id'] = $row['id'];
@@ -297,9 +268,9 @@ class WidgetsDAO {
      */
     
     private function getSettings($wId) {
-    	if (!isset($this->settings)){
-    		$this->settings = $this->getAllWidgetSettings($wId);
-    		\OCP\Util::writeLog('Dashboard', 'query settings of '.$wId.' - '.print_r($this->settings, true), \OCP\Util::DEBUG);
+    	if (!isset($this->settings[$wId])){
+    		$this->settings[$wId] = $this->getAllWidgetSettings($wId);
+    		\OCP\Util::writeLog('Dashboard', 'query settings of '.$wId.' - '.print_r($this->settings[$wId], true), \OCP\Util::DEBUG);
     	}
     }
     
