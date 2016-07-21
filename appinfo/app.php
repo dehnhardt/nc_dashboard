@@ -62,12 +62,13 @@ $widget['controllerServiceName']    = 'widgetDummyController';
 $widget['templateServiceName']      = 'widgetDummyTemplate';
 $widget['special']                  = '';
 $widget['css']                      = array(
-    'dashboard'.DIRECTORY_SEPARATOR.'widgets'.DIRECTORY_SEPARATOR.'dummy'.DIRECTORY_SEPARATOR.'style'
+    'widgets'.DIRECTORY_SEPARATOR.'dummy'.DIRECTORY_SEPARATOR.'style'
 );
 $widget['js']                       = array(
-    'dashboard'.DIRECTORY_SEPARATOR.'widgets'.DIRECTORY_SEPARATOR.'dummy'.DIRECTORY_SEPARATOR.'script'
+    'widgets'.DIRECTORY_SEPARATOR.'dummy'.DIRECTORY_SEPARATOR.'script'
 );
 $widget['enableDefault']			= true;
+$widget['version']					= 1;
 $widgets[] = $widget;
 
 // add clock widget
@@ -78,12 +79,13 @@ $widget['controllerServiceName']    = 'widgetClockController';
 $widget['templateServiceName']      = 'widgetClockTemplate';
 $widget['special']                  = '';
 $widget['css']                      = array(
-    'dashboard'.DIRECTORY_SEPARATOR.'widgets'.DIRECTORY_SEPARATOR.'clock'.DIRECTORY_SEPARATOR.'style'
+    'widgets'.DIRECTORY_SEPARATOR.'clock'.DIRECTORY_SEPARATOR.'style'
 );
 $widget['js']                       = array(
-    'dashboard'.DIRECTORY_SEPARATOR.'widgets'.DIRECTORY_SEPARATOR.'clock'.DIRECTORY_SEPARATOR.'script'
+    'widgets'.DIRECTORY_SEPARATOR.'clock'.DIRECTORY_SEPARATOR.'script'
 );
 $widget['enableDefault']			= true;
+$widget['version']					= 1;
 $widgets[] = $widget;
 
 // add bitcoin widget
@@ -96,12 +98,13 @@ $widget['templateServiceName']      = 'widgetBitcoinTemplate';
 $widget['special']                  = '';
 $widget['link']						= 'https://www.bitstamp.net';
 $widget['css']                      = array(
-    'dashboard'.DIRECTORY_SEPARATOR.'widgets'.DIRECTORY_SEPARATOR.'bitcoin'.DIRECTORY_SEPARATOR.'style'
+    'widgets'.DIRECTORY_SEPARATOR.'bitcoin'.DIRECTORY_SEPARATOR.'style'
 );
 $widget['js']                       = array(
-    'dashboard'.DIRECTORY_SEPARATOR.'widgets'.DIRECTORY_SEPARATOR.'bitcoin'.DIRECTORY_SEPARATOR.'script'
+    'widgets'.DIRECTORY_SEPARATOR.'bitcoin'.DIRECTORY_SEPARATOR.'script'
 );
 $widget['enableDefault']			= true;
+$widget['version']					= 1;
 $widgets[] = $widget;
 
 // add iframe widget
@@ -112,12 +115,13 @@ $widget['controllerServiceName']    = 'widgetIframeController';
 $widget['templateServiceName']      = 'widgetIframeTemplate';
 $widget['special']                  = '';
 $widget['css']                      = array(
-    'dashboard'.DIRECTORY_SEPARATOR.'widgets'.DIRECTORY_SEPARATOR.'iframe'.DIRECTORY_SEPARATOR.'style'
+    'widgets'.DIRECTORY_SEPARATOR.'iframe'.DIRECTORY_SEPARATOR.'style'
 );
 $widget['js']                       = array(
-    'dashboard'.DIRECTORY_SEPARATOR.'widgets'.DIRECTORY_SEPARATOR.'iframe'.DIRECTORY_SEPARATOR.'script'
+    'widgets'.DIRECTORY_SEPARATOR.'iframe'.DIRECTORY_SEPARATOR.'script'
 );
 $widget['enableDefault']			= true;
+$widget['version']					= 1;
 $widgets[] = $widget;
 
 // ----- register widgets to dashboard

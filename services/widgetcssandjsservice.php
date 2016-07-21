@@ -29,35 +29,36 @@ class WidgetCssAndJsService {
         $wIdsToLoad = $this->widgetManagementService->getAvailable();
 
         foreach ($wIdsToLoad as $wId) {
-            $this->loadWidgetJs($wId);
-            $this->loadWidgetCss($wId);
+        	$appName = $this->widgetsDAO->getAppName($wId);
+        	\OCP\Util::writeLog('dashboard', 'AppName: '.$appName." WID: ".$wId, \OCP\Util::DEBUG);
+            $this->loadWidgetJs($wId, $appName);
+            $this->loadWidgetCss($wId, $appName);
         }
     }
 
-    public function loadWidgetCss($wId) {
+    public function loadWidgetCss($wId, $app) {
         $stylePaths = $this->widgetsDAO->getCssPaths($wId);
 
         foreach ($stylePaths as $stylePath) {
             // load only once
             if( !in_array($stylePath, $this->loadedStyles) ) {
-                \OCP\Util::addStyle(NULL, 'apps/'.$stylePath);
+                \OCP\Util::addStyle($app, '../'.$stylePath);
                 $this->loadedStyles[]   = $stylePath;
             }
         }
     }
 
-    public function loadWidgetJs($wId) {
+    public function loadWidgetJs($wId, $app) {
         $scriptPaths = $this->widgetsDAO->getJsPaths($wId);
-
+                
         foreach ($scriptPaths as $scriptPath) {
             // load only once
             if( !in_array($scriptPath, $this->loadedStyles) ) {
-            	\OCP\Util::addScript( NULL, 'apps/'.$scriptPath);
+            	\OCP\Util::addScript($app, '../'.$scriptPath);
             	$this->loadedScripts[]   = $scriptPath;
             }
         }
     }
-
 
     // ---- private methods --------------------------------------
 
