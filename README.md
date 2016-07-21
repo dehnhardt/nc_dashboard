@@ -75,12 +75,6 @@ the registered name of the widget template
 */
 $widget['templateServiceName']      = 'widget[YourApp]Template'; 
 
-/* 
-*optional*, default: nothing
-A "Joker" for later use... maybe...
-*/
-$widget['special']                  = '';
-
 /*
 *required*, default: 1
 The version of YOUR widget, don't forget increment it if you change any of these parameters
@@ -104,14 +98,18 @@ $widget['enableDefault']				= true;
 /*
 *optional* default: empty
 provide the pathes to aditional cascading style sheets as an array. 
+Omit the path to your app directory, this will automativally be added.
+
 */
-$widget['css']                      = array('one file');
+$widget['css']                      = array('widget/one_file');
 
 /*
 *optional* default: empty
 provide the pathes to your javascript files as an array. . 
+Omit the path to your app directory, this will automativally be added.
+
 */
-$widget['js']                       = array('one file', 'another file');
+$widget['js']                       = array('widget/one_file', 'widget/another_file');
 
 /*end of parameters*/
 
