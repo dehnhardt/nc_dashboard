@@ -67,7 +67,7 @@ $widget['js']                       = array(
     'widgets'.DIRECTORY_SEPARATOR.'dummy'.DIRECTORY_SEPARATOR.'script'
 );
 $widget['enableDefault']			= true;
-$widget['version']					= 1;
+$widget['version']					= 3;
 $widgets[] = $widget;
 
 // add clock widget
@@ -83,7 +83,7 @@ $widget['js']                       = array(
     'widgets'.DIRECTORY_SEPARATOR.'clock'.DIRECTORY_SEPARATOR.'script'
 );
 $widget['enableDefault']			= true;
-$widget['version']					= 1;
+$widget['version']					= 3;
 $widgets[] = $widget;
 
 // add bitcoin widget
@@ -101,7 +101,7 @@ $widget['js']                       = array(
     'widgets'.DIRECTORY_SEPARATOR.'bitcoin'.DIRECTORY_SEPARATOR.'script'
 );
 $widget['enableDefault']			= true;
-$widget['version']					= 1;
+$widget['version']					= 3;
 $widgets[] = $widget;
 
 // add iframe widget
@@ -117,7 +117,7 @@ $widget['js']                       = array(
     'widgets'.DIRECTORY_SEPARATOR.'iframe'.DIRECTORY_SEPARATOR.'script'
 );
 $widget['enableDefault']			= true;
-$widget['version']					= 1;
+$widget['version']					= 3;
 $widgets[] = $widget;
 
 // ----- register widgets to dashboard
