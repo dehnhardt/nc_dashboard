@@ -60,7 +60,6 @@ $widget['wId']                      = 'dummy';
 $widget['appName']                  = 'dashboard';
 $widget['controllerServiceName']    = 'widgetDummyController';
 $widget['templateServiceName']      = 'widgetDummyTemplate';
-$widget['special']                  = '';
 $widget['css']                      = array(
     'widgets'.DIRECTORY_SEPARATOR.'dummy'.DIRECTORY_SEPARATOR.'style'
 );
@@ -77,7 +76,6 @@ $widget['wId']                      = 'clock';
 $widget['appName']                  = 'dashboard';
 $widget['controllerServiceName']    = 'widgetClockController';
 $widget['templateServiceName']      = 'widgetClockTemplate';
-$widget['special']                  = '';
 $widget['css']                      = array(
     'widgets'.DIRECTORY_SEPARATOR.'clock'.DIRECTORY_SEPARATOR.'style'
 );
@@ -95,7 +93,6 @@ $widget['appName']                  = 'dashboard';
 $widget['version']					= 2;
 $widget['controllerServiceName']    = 'widgetBitcoinController';
 $widget['templateServiceName']      = 'widgetBitcoinTemplate';
-$widget['special']                  = '';
 $widget['link']						= 'https://www.bitstamp.net';
 $widget['css']                      = array(
     'widgets'.DIRECTORY_SEPARATOR.'bitcoin'.DIRECTORY_SEPARATOR.'style'
@@ -113,7 +110,6 @@ $widget['wId']                      = 'iframe';
 $widget['appName']                  = 'dashboard';
 $widget['controllerServiceName']    = 'widgetIframeController';
 $widget['templateServiceName']      = 'widgetIframeTemplate';
-$widget['special']                  = '';
 $widget['css']                      = array(
     'widgets'.DIRECTORY_SEPARATOR.'iframe'.DIRECTORY_SEPARATOR.'style'
 );
