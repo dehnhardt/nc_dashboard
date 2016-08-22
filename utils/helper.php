@@ -8,6 +8,7 @@
 
 namespace OCA\Dashboard\Utils;
 
+use OCA\Dashboard\Services\WidgetService;
 
 class Helper {
 
@@ -38,6 +39,10 @@ class Helper {
     static function gId($wIdG) {
         $split  = explode('-', $wIdG);
         return $split[1];
+    }
+    
+    static function registerHooks() {
+    	\OCP\Util::connectHook('OC_DASHBOARD', 'load_widget', new WidgetService(), 'addWidget');
     }
 
 }

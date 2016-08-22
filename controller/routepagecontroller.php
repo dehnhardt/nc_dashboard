@@ -15,17 +15,19 @@ use OCA\Dashboard\Services\WidgetCssAndJsService;
 use \OCP\IRequest;
 use \OCP\AppFramework\Http\TemplateResponse;
 use \OCP\AppFramework\Controller;
-
+use \Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class RoutePageController extends Controller {
 
     private $user;
     private $widgetCssAndJsService;
+    private $eventDispatcher;
 
-    public function __construct($appName, IRequest $request, $user, WidgetCssAndJsService $widgetCssAndJsService){
+    public function __construct($appName, IRequest $request, $user, WidgetCssAndJsService $widgetCssAndJsService, EventDispatcherInterface $eventDispatcher){
         parent::__construct($appName, $request);
         $this->user                     = $user;
         $this->widgetCssAndJsService    = $widgetCssAndJsService;
+        $this->eventDispatcher			= $eventDispatcher;
     }
 
     /**
@@ -37,7 +39,12 @@ class RoutePageController extends Controller {
      */
     public function index() {
     	\OCP\Util::writeLog('dashboard', '**** call: index', \OCP\Util::DEBUG);
-        $this->widgetCssAndJsService->loadAll();
+    	/*
+    	\OCP\Util::writeLog( 'Dashboard', 'Dashboard: Before dispatch', \OCP\Util::DEBUG );
+    	$this->eventDispatcher->dispatch('dashboard.callwidgets');
+    	\OCP\Util::writeLog( 'Dashboard', 'Dashboard: After dispatch', \OCP\Util::DEBUG );
+    	*/
+    	$this->widgetCssAndJsService->loadAll();
 
         $params = array(
             'user'  => $this->user,

@@ -31,6 +31,6 @@
         <database>mssql</database>
         <database>pgsql</database>
         <lib>curl</lib>
-        <owncloud min-version="7.0.4" max-version="9.1"/>
+        <owncloud min-version="7.0.4" max-version="11.1"/>
     </dependencies>
 </info>
