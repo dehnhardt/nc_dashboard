@@ -65,12 +65,12 @@ class Application extends App {
 		
 		$this->dispatcher = $this->getContainer()->getServer()->getEventDispatcher();
 		
+		/*
 		\OCP\Util::writeLog( 'Dashboard', 'Dashboard: Before dispatch', \OCP\Util::DEBUG );
-		$this->dispatcher->dispatch('dashboard.callwidgets');
+		$this->dispatcher->dispatch('OCA\Dashboard\RequestWidget');
 		\OCP\Util::writeLog( 'Dashboard', 'Dashboard: After dispatch', \OCP\Util::DEBUG );
-		
-		//$this->dispatcher->addListener( 'dashboard.callwidgets', $listener );
-		
+		*/
+				
 		/**
 		 * Route Controllers
 		 */

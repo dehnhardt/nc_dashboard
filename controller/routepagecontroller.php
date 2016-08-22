@@ -27,7 +27,7 @@ class RoutePageController extends Controller {
         parent::__construct($appName, $request);
         $this->user                     = $user;
         $this->widgetCssAndJsService    = $widgetCssAndJsService;
-        $this->eventDispatcher			= $eventDispatcher;
+        $this->dispatcher				= $eventDispatcher;
     }
 
     /**
@@ -39,10 +39,12 @@ class RoutePageController extends Controller {
      */
     public function index() {
     	\OCP\Util::writeLog('dashboard', '**** call: index', \OCP\Util::DEBUG);
+
+		//$this->dispatcher = \OC::$server->getEventDispatcher();
     	/*
     	\OCP\Util::writeLog( 'Dashboard', 'Dashboard: Before dispatch', \OCP\Util::DEBUG );
-    	$this->eventDispatcher->dispatch('dashboard.callwidgets');
-    	\OCP\Util::writeLog( 'Dashboard', 'Dashboard: After dispatch', \OCP\Util::DEBUG );
+		$this->dispatcher->dispatch('OCA\Dashboard\RequestWidget');
+		\OCP\Util::writeLog( 'Dashboard', 'Dashboard: After dispatch', \OCP\Util::DEBUG );
     	*/
     	$this->widgetCssAndJsService->loadAll();
 
